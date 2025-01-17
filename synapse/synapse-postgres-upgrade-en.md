@@ -1,4 +1,4 @@
-# Synapse - uprading PostgreSQL from 12 to 17 - Debian
+# Synapse - upgrading PostgreSQL from 12 to 17 - Debian
 
 ## Environment
 
