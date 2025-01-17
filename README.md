@@ -1,4 +1,4 @@
-Notes, configurations, thoughts and other things.
+### Notes, configurations, thoughts and other things.
 
 Use at your own risk.
 
