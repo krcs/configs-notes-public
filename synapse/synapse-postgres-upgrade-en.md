@@ -1,6 +1,6 @@
-### Synapse - uprading PostgreSQL from 12 to 17 - Debian
+# Synapse - uprading PostgreSQL from 12 to 17 - Debian
 
-#### Environment
+## Environment
 
 Data folders:
 
@@ -12,7 +12,7 @@ Binary:
     /usr/lib/postgresql/12/bin
     /usr/lib/postgresql/17/bin
 
-#### Initialization
+## Initialization
 
 Stop synapse service.
 
@@ -41,7 +41,7 @@ Make sure that both instances are not running:
     /usr/lib/postgresql/12/pg_ctl stop -D /storage/db/pg12
     /usr/lib/postgresql/17/pg_ctl stop -D /storage/db/pg17
 
-#### pg_upgrade
+## pg_upgrade
 
 Run the **pg_upgrade** command in the check mode.
 
@@ -55,7 +55,7 @@ Run the **pg_upgrade** command in the check mode.
 
 If everything is ok run above command without the _check_ parameter.
 
-#### homeserver.yaml
+## homeserver.yaml
 
 Check and/or modify the database section in the synapse config file - **homeserver.yaml** . 
 
@@ -63,7 +63,7 @@ Start new instance:
 
     /usr/lib/postgresql/17/pg_ctl start -D /storage/db/pg17
 
-#### NOTES
+## NOTES
 
 You may need to create a new user **synapse_user** in the new instance.
 
