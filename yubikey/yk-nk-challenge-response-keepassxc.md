@@ -1,0 +1,1 @@
+../nitrokey/yk-nk-challenge-response-keepassxc.md
