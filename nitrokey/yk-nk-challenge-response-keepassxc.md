@@ -1,6 +1,6 @@
 # Nitrokey/Yubikey challange-response KeePassXC.
 
-## Generate a 20-byte hexadecimal string encoded as base32.
+## Generate a 20-byte hexadecimal string encoded to base32.
 
 **nitropy**:
 
@@ -10,8 +10,8 @@ or **openssl**
 
     openssl rand 20 | base32
 
-You can save the hexadecimal value and store it in a secret location. 
-You can transfer it to another device and have a backup.
+You can save the hexadecimal value and store it in a secret location and
+transfer it to another device and have a backup.
 
 ## Transfering secret to the device.
 
