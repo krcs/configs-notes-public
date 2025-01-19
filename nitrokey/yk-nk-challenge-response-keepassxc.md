@@ -1,4 +1,4 @@
-# Nitrokey/Yubikey challange-response Keepass.
+# Nitrokey/Yubikey challange-response KeePassXC.
 
 ## Generate a 20-byte hexadecimal string encoded as base32.
 
