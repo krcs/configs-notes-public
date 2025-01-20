@@ -25,7 +25,7 @@ or
 
 ### Yubikey:
 
-    ykman otp otp chalresp -T -f 2 <secret
+    ykman otp otp chalresp -T -f 2 <secret>
 
 or
 
