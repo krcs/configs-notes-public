@@ -5,7 +5,9 @@
 Ensure that the Tor service is stopped.
 
 Start Tor with the following parameters:
+
 **hiddenservicedir** - Folder to store data files for the hidden service.
+
 **hiddenserviceport** - Ports mapping.
 
 Run Tor service:
@@ -24,7 +26,7 @@ On the other terminal window run **ncat** and pipe through **openssl**:
 
     ncat -l -p <local_service_port> -v | openssl enc -aes-256-cbc -pbkdf2 -pass pass:<password> -d -in - -out <file_name>
 
-The **<folder>/hostname** file contains the current onion address of the hidden service.
+The **folder/hostname** file contains the current onion address of the hidden service.
 
 ## CLIENT
 
