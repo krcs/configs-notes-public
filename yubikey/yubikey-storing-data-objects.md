@@ -45,9 +45,10 @@
 
 Range: 0x005F0000 to 0x005FC100.
 
-Yubikey NEO, Firmawre 3.5.0 - maximum 2034 bytes for single undefined DataTag.
-
-    (0x005FC100-0x005F0000)*2034 = 100495872 (~100MB)
+Maximum number of bytes per for single undefined DataTag:  
+- Yubikey NEO, Firmware 3.5.0   - 2034 bytes  
+- Yubikey 4, Frimware 4.3.4     - 3046 bytes  
+- Yubikey 5 NFC, Firmware 5.4.3 - 3046 bytes  
 
 Split input into chunks of 2034 bytes.
 
@@ -73,6 +74,10 @@ Export data from Yubikey:
 Verify:
 
     sha256sum <input_file> <output_file>
+
+Clear object:
+
+    ykman piv objects import <object> /dev/null
 
 ## Reference/Notes
 
