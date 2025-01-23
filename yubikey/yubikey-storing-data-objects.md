@@ -72,7 +72,7 @@ Export data from Yubikey:
 
 Verify:
 
-    sha256sum <input_file>; sha256sum <output_file>
+    sha256sum <input_file> <output_file>
 
 ## Reference/Notes
 
