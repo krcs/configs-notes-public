@@ -79,6 +79,12 @@ Clear object:
 
     ykman piv objects import <object> /dev/null
 
+## Scripts
+
+https://github.com/krcs/configs-notes-public/blob/main/linux/scripts/yk-import-file.sh  
+https://github.com/krcs/configs-notes-public/blob/main/linux/scripts/yk-export-data.sh  
+https://github.com/krcs/configs-notes-public/blob/main/linux/scripts/yk-clear-data.sh  
+
 ## Reference/Notes
 
 https://docs.yubico.com/yesdk/users-manual/application-piv/piv-objects.html
