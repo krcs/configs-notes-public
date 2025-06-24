@@ -10,9 +10,15 @@ Start Tor with the following parameters:
 
 **hiddenserviceport** - Ports mapping.
 
+**SocksPort** - optional - Tor listening port. Default 9050.
+
 Run Tor service:
 
-    tor --hiddenservicedir <folder> --hiddenserviceport "<port> 127.0.0.1:<local_service_port>"
+    tor --ignore-missing-torrc \
+        --SocksPort <socksport> \
+        --hiddenservicedir <folder> \
+        --hiddenserviceport "<port> 127.0.0.1:<local_service_port>" \
+        --RunAsDaemon 1 \
 
 ### GPG
 
