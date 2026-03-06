@@ -18,7 +18,7 @@ Run Tor service:
         --SocksPort <socksport> \
         --hiddenservicedir <folder> \
         --hiddenserviceport "<port> 127.0.0.1:<local_service_port>" \
-        --RunAsDaemon 1 \
+        --RunAsDaemon 1
 
 ### GPG
 
@@ -31,6 +31,10 @@ On the other terminal window run **ncat** and pipe through **gpg**:
 On the other terminal window run **ncat** and pipe through **openssl**:
 
     ncat -l -p <local_service_port> -v | openssl enc -aes-256-cbc -pbkdf2 -pass pass:<password> -d -in - -out <file_name>
+
+### AGE
+
+    ncat -l -l <local_service_port> -v | age -d -i <identity> -o <file_name>
 
 The **folder/hostname** file contains the current onion address of the hidden service.
 
@@ -50,6 +54,9 @@ Symetric encryption:
 
      openssl enc -aes-256-cbc -pbkdf2 -pass pass:<password> -in <file_name> -out - | pv | ncat --proxy 127.0.0.1:9050 --proxy-type socks5 <onion_address> <port>
 
+### AGE
+
+    age -e -r <recipient> -o - <file_name> | pv | ncat --proxy 127.0.0.1:9050 --proxy-type socks5 <onion_adress> <port>
 
 ## NOTES
 
@@ -58,3 +65,5 @@ Tor Expert Bundle: https://www.torproject.org/download/tor/
 Tor CLI: https://gitlab.torproject.org/tpo/core/tor/-/raw/main/doc/man/tor.1.txt
 
 ncat: https://nmap.org/download.html
+
+age: https://github.com/FiloSottile/age
