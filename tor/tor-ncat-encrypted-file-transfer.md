@@ -1,8 +1,15 @@
 # Encrypt and transfer file over Tor network using ncat.
 
-## SERVER
+## Receiver (decryption)
 
 Ensure that the Tor service is stopped.
+
+Create folder for the hidden service data and change its permission.
+
+    mkdir <folder>
+    chmod 700 <folder>
+
+This folder will contain a hostname file with the onion address.
 
 Start Tor with the following parameters:
 
@@ -18,17 +25,12 @@ Run Tor service:
         --SocksPort <socksport> \
         --hiddenservicedir <folder> \
         --hiddenserviceport "<port> 127.0.0.1:<local_service_port>" \
-        --RunAsDaemon 1
 
 ### GPG
-
-On the other terminal window run **ncat** and pipe through **gpg**:
 
     ncat -l -p <local_service_port> -v | gpg -quiet --decrypt -o <file_name>
 
 ### OpenSSL
-
-On the other terminal window run **ncat** and pipe through **openssl**:
 
     ncat -l -p <local_service_port> -v | openssl enc -aes-256-cbc -pbkdf2 -pass pass:<password> -d -in - -out <file_name>
 
@@ -36,9 +38,8 @@ On the other terminal window run **ncat** and pipe through **openssl**:
 
     ncat -l -l <local_service_port> -v | age -d -i <identity> -o <file_name>
 
-The **folder/hostname** file contains the current onion address of the hidden service.
 
-## CLIENT
+## Sender (encryption)
 
 ### GPG
 
@@ -62,7 +63,7 @@ Symetric encryption:
 
 Tor Expert Bundle: https://www.torproject.org/download/tor/
 
-Tor CLI: https://gitlab.torproject.org/tpo/core/tor/-/raw/main/doc/man/tor.1.txt
+Tor CLI reference: https://gitlab.torproject.org/tpo/core/tor/-/raw/main/doc/man/tor.1.txt
 
 ncat: https://nmap.org/download.html
 
